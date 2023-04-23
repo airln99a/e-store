@@ -287,6 +287,48 @@ class admin extends CI_Controller
     }
   }
 
+  public function ChangePassword()
+  {
+    $data['title']      = 'Change Password - Admin Store';
+    $data['profil']     = $this->db->get_where('useradmin', ['id_useradmin' => 1])->row_array();
+
+    $this->form_validation->set_rules('oldpassword', 'Password Lama', 'required|trim');
+    $this->form_validation->set_rules(
+      'newpassword',
+      'Password Baru',
+      'required|trim|min_length[5]|matches[repeatpassword]'
+    );
+    $this->form_validation->set_rules('repeatpassword', 'Ulangi Password', 'required|trim|matches[newpassword]');
+
+    if ($this->form_validation->run() == false) {
+      $this->load->view('admin/partials/header', $data);
+      $this->load->view('admin/partials/nav');
+      $this->load->view('admin/change_password');
+      $this->load->view('admin/partials/footer');
+    } else {
+      $current_password   = $this->input->post('oldpassword');
+      $new_password       = $this->input->post('newpassword');
+      if (!password_verify($current_password, $data['profil']['password'])) {
+        $this->session->set_flashdata('message', '<div id="penanda">salah</div>');
+        redirect('admin/ChangePassword');
+      } else {
+        if ($current_password == $new_password) {
+          $this->session->set_flashdata('message', '<div id="penanda">sama</div>');
+          redirect('admin/ChangePassword');
+        } else {
+          $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+
+          $this->db->set('password', $password_hash);
+          $this->db->where('id_useradmin', 1);
+          $this->db->update('useradmin');
+
+          $this->session->set_flashdata('message', '<div id="penanda">success</div>');
+          redirect('admin/ChangePassword');
+        }
+      }
+    }
+  }
+
   // controller logout
   public function logout()
   {
