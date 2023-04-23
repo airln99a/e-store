@@ -1,6 +1,8 @@
    <?php
     error_reporting(0);
     ?>
+   <?= $this->session->flashdata('penanda');
+    unset($_SESSION['penanda']); ?>
    <!-- Shop Product Start -->
    <div class="col-lg-12 col-md-12">
      <div class="row pb-3 m-auto">
@@ -148,5 +150,13 @@
          $(".fill-gambar").html("")
          $(".fill-gambar").removeClass("slick-initialized slick-slider")
        })
+
+       let value = $("#penanda").html()
+       if(value == "nodata"){
+        $("#search-data").parent(".input-group").hide()
+        $("form").append(`
+              <h1 class="d-flex justify-content-center">Belum ada data Produk ditemukan !</h1>
+          `)
+       }
      });
    </script>

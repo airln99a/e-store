@@ -48,9 +48,15 @@ class landing extends CI_Controller
       $this->load->view('landing/partials/nav', $data);
       $this->load->view('landing/produk', $data);
       $this->load->view('landing/partials/footer');
+    } else {
+      $this->session->set_flashdata('penanda', '<div hidden id="penanda">nodata</div>');
+      $this->load->view('landing/partials/header', $data);
+      $this->load->view('landing/partials/nav', $data);
+      $this->load->view('landing/produk', $data);
+      $this->load->view('landing/partials/footer');
     }
   }
-  
+
   //controller tentang kami
   public function tentang()
   {
