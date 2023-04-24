@@ -53,14 +53,9 @@
            </li>
            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('admin/ManajemenData') ?>" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span class="hide-menu">Management</span></a></li>
            </li>
+           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('admin/logout') ?>" aria-expanded="false"><i class="mdi me-2 mdi-power"></i><span class="hide-menu">Logout</span></a></li>
+           </li>
          </ul>
        </nav>
-     </div>
-     <div class="sidebar-footer">
-       <div class="row">
-         <div class="d-flex align-items-center justify-content-center">
-           <a href="<?= base_url('admin/logout') ?>" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="mdi mdi-power"></i></a>
-         </div>
-       </div>
      </div>
    </aside>
