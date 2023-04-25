@@ -286,7 +286,7 @@ class admin extends CI_Controller
       redirect('admin/ManajemenData');
     }
   }
-
+// ganti password
   public function ChangePassword()
   {
     $data['title']      = 'Change Password - Admin Store';
