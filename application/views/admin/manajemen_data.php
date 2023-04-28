@@ -168,7 +168,7 @@ unset($_SESSION['idEdit']); ?>
                 <label for="exampleInputEmail1">Harga Produk</label>
                 <div class="d-flex flex-row align-items-center" style="gap: 10px">
                   <label for="exampleInputEmail1">Rp.</label>
-                  <input type="text" class="form-control" id="harga-produk" name="harga_produk" aria-describedby="emailHelp" value="<?= $p['harga'];  ?>">
+                  <input type="text" class="form-control" id="harga-produk-edit" name="harga_produk" aria-describedby="emailHelp" value="<?= $p['harga'];  ?>">
                 </div>
                 <?= form_error('harga_produk', '<small class="text-danger pl-3">', '</small>') ?>
               </div>
@@ -213,7 +213,7 @@ unset($_SESSION['idEdit']); ?>
     })
 
     // tambah separator pada harga produk
-    $("#harga-produk").keyup(function() {
+    $("#harga-produk, #harga-produk-edit").keyup(function() {
       // set value hanya angka ketika input
       this.value = this.value.replace(/\D/g, '');
 
