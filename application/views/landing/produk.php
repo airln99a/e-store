@@ -101,7 +101,7 @@
        //  chat wa
        $(".chat-whatsapp").click(function() {
          let produk = $(this).data("title")
-         window.open(`https://wa.me/6285954588332?text=Saya%20tertarik%20dengan%20produk%20Anda%20yakni%20${produk}`)
+         window.open(`https://wa.me/6285954588332?text=Nama :%0aAlamat pengiriman : %0aNama Produk :%20${produk}%0aJumlah :`)
        })
 
        //  lihat detail
