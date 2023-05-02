@@ -41,7 +41,7 @@
               <?php $process = json_decode($p['gambar']); ?>
               <img style="width: fit-content; height: 306px;" class="img-fluid d-flex m-auto" src="<?= base_url('assets/produk/') . $process[0]  ?>"></img>
             </a>
-            <h5 class="font-weight-semi-bold m-0"><?= $p['nama_produk'] ?></h5>
+            <h5 class="font-weight-semi-bold m-0 text-center"><?= $p['nama_produk'] ?></h5>
           </div>
         </div>
       <?php endforeach; ?>

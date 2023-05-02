@@ -3,6 +3,12 @@
     ?>
    <?= $this->session->flashdata('penanda');
     unset($_SESSION['penanda']); ?>
+
+   <style>
+     .force-none {
+       display: none !important;
+     }
+   </style>
    <!-- Shop Product Start -->
    <div class="col-lg-12 col-md-12">
      <div class="row pb-3 m-auto">
@@ -14,10 +20,13 @@
                <div class="input-group-append">
                  <span class="input-group-text bg-transparent text-primary">
                    <i class="fa fa-search"></i>
-                 </span>
-               </div>
-             </div>
-           </form>
+                  </span>
+                </div>
+              </div>
+            </form>
+            <div class="data-not-found text-center w-100" style="display: none">
+              <h1>Data yang anda cari tidak ditemukan!</h1>
+            </div>
          </div>
        </div>
        <?php
@@ -72,7 +81,7 @@
                  </div>
 
                  <div class="col-lg-7 pb-5">
-                   <h3 class="font-weight-semi-bold"><?= $p['nama_produk'] ?></h3>
+                   <h3 class="font-weight-semi-bold text-center"><?= $p['nama_produk'] ?></h3>
                    <h3 class="font-weight-semi-bold mb-4">Rp. <?= $p['harga'] ?></h3>
                    <p class="mb-4"><?= $p['deskripsi'] ?></p>
                  </div>
@@ -94,14 +103,24 @@
        $("#search-data").on("keyup", function() {
          var value = $(this).val().toLowerCase();
          $(".nama-produk").filter(function() {
-           $(this).parents('.list-produk').toggle($(this).text().toLowerCase().indexOf(value) > -1)
+           let result = $(this).text().toLowerCase().indexOf(value) > -1;
+           console.log(result)
+           if ((result == true && value) || !value) {
+             $(this).parents('.list-produk').toggle(result)
+             $(".data-not-found").hide()
+             $(".product-item").removeClass("force-none")
+           } else {
+             $(".product-item").addClass("force-none")
+             $(".data-not-found").show()
+           }
          });
        });
 
        //  chat wa
        $(".chat-whatsapp").click(function() {
          let produk = $(this).data("title")
-         window.open(`https://wa.me/6285954588332?text=Nama :%0aAlamat pengiriman : %0aNama Produk :%20${produk}%0aJumlah :`)
+         window.open(`
+                 https: //wa.me/6285954588332?text=Nama :%0aAlamat pengiriman : %0aNama Produk :%20${produk}%0aJumlah :`)
        })
 
        //  lihat detail
@@ -152,9 +171,9 @@
        })
 
        let value = $("#penanda").html()
-       if(value == "nodata"){
-        $("#search-data").parent(".input-group").hide()
-        $("form").append(`
+       if (value == "nodata") {
+         $("#search-data").parent(".input-group").hide()
+         $("form").append(`
               <h1 class="d-flex justify-content-center">Belum ada data Produk ditemukan !</h1>
           `)
        }
