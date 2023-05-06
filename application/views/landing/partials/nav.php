@@ -38,8 +38,8 @@
             <img class="img-fluid" src="<?= base_url('assets/landing/img/carousel-1.jpg') ?>" alt="Image">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
               <div class="p-3" style="max-width: 700px;">
-                <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                <h4 class="text-light text-uppercase font-weight-medium mb-3">Get your product</h4>
+                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Outfit</h3>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <img class="img-fluid" src="<?= base_url('assets/landing/img/carousel-2.jpg') ?>" alt="Image">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
               <div class="p-3" style="max-width: 700px;">
-                <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                <h4 class="text-light text-uppercase font-weight-medium mb-3">Choose your product</h4>
                 <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
               </div>
             </div>
