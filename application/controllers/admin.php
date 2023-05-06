@@ -9,7 +9,7 @@ class admin extends CI_Controller
     parent::__construct();
     $this->load->model('admin_model', 'am');
 
-    if (!$this->session->userdata('email')) {
+    if (!$this->session->userdata('username')) {
       redirect('auth/not_found');
     }
   }
@@ -332,8 +332,8 @@ class admin extends CI_Controller
   // controller logout
   public function logout()
   {
-    $this->session->unset_userdata('email');
-    $this->session->unset_userdata('role_id');
+    $this->session->unset_userdata('id');
+    $this->session->unset_userdata('username');
 
     $this->session->set_flashdata('message', '<div hidden id="penanda">succesLogout</div>');
     redirect('auth');

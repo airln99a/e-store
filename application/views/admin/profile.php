@@ -49,13 +49,13 @@ unset($_SESSION['penanda']); ?>
                   <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="example-email" class="col-md-12">Email</label>
                 <div class="col-md-12">
                   <input type="email" placeholder="johnathan@admin.com" class="form-control ps-0 form-control-line" name="email" id="email_admin" value="<?= $profil['email'] ?>">
                   <?= form_error('umur', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="example-email" class="col-md-12">Alamat</label>
                 <div class="col-md-12">

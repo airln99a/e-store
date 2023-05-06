@@ -6,7 +6,7 @@
          <div class="d-flex align-items-center">
            <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
+               <li class="breadcrumb-item"><a href="<?= base_url('admin/ManajemenData') ?>">Home</a></li>
                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
              </ol>
            </nav>

@@ -9,8 +9,8 @@ class auth extends CI_Controller
     parent::__construct();
     $this->load->library('session');
 
-    if ($this->session->userdata('email')) {
-      redirect('admin');
+    if ($this->session->userdata('username')) {
+      redirect('admin/ManajemenData');
     }
   }
 
@@ -27,7 +27,7 @@ class auth extends CI_Controller
   public function login()
   {
     // menambah validasi form
-    $this->form_validation->set_rules('email', 'Email', 'required|trim');
+    $this->form_validation->set_rules('username_data', 'Username', 'required|trim');
     $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 
@@ -35,20 +35,18 @@ class auth extends CI_Controller
     if ($this->form_validation->run() == FALSE) {
       redirect('auth');
     } else {
-      $email      = $this->input->post('email');
-      $password   = $this->input->post('password');
-      var_dump($email, $password);
+      $username_data      = $this->input->post('username_data');
+      $password           = $this->input->post('password');
 
-      $user       = $this->db->get_where('useradmin', ['email' => $email])->row_array();
-
+      $user       = $this->db->get_where('useradmin', ['username' => $username_data])->row_array();
       if ($user) {
         if (password_verify($password, $user['password'])) {
           $data = [
-            'id'        => $user['id_useradmin'],
-            'email'     => $user['email']
+            'id'                => $user['id_useradmin'],
+            'username'          => $user['username']
           ];
           $this->session->set_userdata($data);
-          redirect('admin');
+          redirect('admin/ManajemenData');
         } else {
           $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!
                 </div>');

@@ -60,20 +60,20 @@
                 unset($_SESSION['message']); ?>
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" name="email" id="email_login" class="form-control" />
-                  <label class="form-label" for="form1Example1">Email address</label>
-                  <?= form_error('email', '<small class="text-danger pl-3" style="margin-left: 13px;">', '</small>') ?>
+                  <input type="text" name="username_data" id="username_data" class="form-control"/>
+                  <label class="form-label" for="form1Example1">Username</label>
+                  <?= form_error('username_data', '<small class="text-danger pl-3" style="margin-left: 13px;">', '</small>') ?>
                 </div>
 
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" name="password" id="password_login" class="form-control" />
+                  <input type="password" name="password" id="password_login" class="form-control"/>
                   <label class="form-label" for="form1Example2">Password</label>
                   <?= form_error('password', '<small class="text-danger pl-3" style="margin-left: 13px;">', '</small>') ?>
                 </div>
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block submit-button">Sign in</button>
               </form>
             </div>
           </div>
