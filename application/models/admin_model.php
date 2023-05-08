@@ -22,7 +22,6 @@ class admin_model extends CI_Model
     $id = $this->input->post('id');
     $data = [
       "nama_lengkap"    => $this->input->post('nama'),
-      "email"           => $this->input->post('email'),
       "alamat"          => $this->input->post('alamat'),
       "no_wa"           => $this->input->post('nomor'),
       "foto"            => $data
@@ -37,7 +36,6 @@ class admin_model extends CI_Model
     $id = $this->input->post('id');
     $data = [
       "nama_lengkap"     => $this->input->post('nama'),
-      "email"            => $this->input->post('email'),
       "alamat"           => $this->input->post('alamat'),
       "no_wa"            => $this->input->post('nomor')
     ];

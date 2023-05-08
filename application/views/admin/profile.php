@@ -45,7 +45,7 @@ unset($_SESSION['penanda']); ?>
               <div class="form-group">
                 <label class="col-md-12 mb-0">Nama Lengkap</label>
                 <div class="col-md-12">
-                  <input type="text" class="form-control ps-0 form-control-line" name="nama" id="nama_admin" value="<?= $profil['nama_lengkap'] ?>">
+                  <input type="text" placeholder="Masukkan nama disini" class="form-control ps-0 form-control-line" name="nama" id="nama_admin" value="<?= $profil['nama_lengkap'] ?>">
                   <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
               </div>
@@ -59,14 +59,14 @@ unset($_SESSION['penanda']); ?>
               <div class="form-group">
                 <label for="example-email" class="col-md-12">Alamat</label>
                 <div class="col-md-12">
-                  <input type="text" placeholder="johnathan@admin.com" class="form-control ps-0 form-control-line" name="alamat" id="" value="<?= $profil['alamat'] ?>">
+                  <input type="text" placeholder="Masukkan alamat disini" class="form-control ps-0 form-control-line" name="alamat" id="" value="<?= $profil['alamat'] ?>">
                   <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
               </div>
               <div class="form-group">
                 <label for="example-email" class="col-md-12">Nomor Whatsapp</label>
                 <div class="col-md-12">
-                  <input type="text" placeholder="johnathan@admin.com" class="form-control ps-0 form-control-line" name="nomor" id="nomor_admin" value="<?= $profil['no_wa'] ?>" maxlength="14">
+                  <input type="text" placeholder="Masukkan nomor Whatsapp disini" class="form-control ps-0 form-control-line" name="nomor" id="nomor_admin" value="<?= $profil['no_wa'] ?>" maxlength="14">
                   <?= form_error('nomor', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
               </div>

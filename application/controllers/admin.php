@@ -60,7 +60,6 @@ class admin extends CI_Controller
   {
     // menambah validasi form
     $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-    $this->form_validation->set_rules('email', 'Email', 'required|trim');
     $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
     $this->form_validation->set_rules('nomor', 'Nomor Whatsapp', 'required|trim');
 
